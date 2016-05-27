@@ -1,0 +1,13 @@
+galaxy_info:
+  author: mariojmdavid@gmail.com
+  description: Ambertools applications
+  company: LIP and INDIGO-DataCloud
+  license: Apache
+  min_ansible_version: 2.0
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+  galaxy_tags:
+  - ambertools
+dependencies: []
