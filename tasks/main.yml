@@ -1,6 +1,4 @@
 ---
-# TODO not yet modified for ambertools
-
 - name: Install necessary packages
   apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
   with_items:
@@ -39,24 +37,14 @@
     - scipy
     - virtualenv
 
-- name: clone git repositories
-  git: repo={{ item.repo }} dest={{ item.dest }} clone=yes
+- name: unarchive ambertools
+  unarchive: src={{ ambertools_url }} dest=/usr/local copy=no
+
+- name: install configure ambertools
+  command: {{ item }} chdir=/usr/local/{{ AMBERHOME }}
   with_items:
-    - { repo: "https://github.com/haddocking/{{ haddock_app }}.git", dest: "/usr/local/{{ haddock_app }}" }
-
-- name: wget nvidia driver
-  get_url: url={{ nvidia_url }} dest=/usr/local mode=700
-
-- name: unarchive opencl headers
-  unarchive: src={{ opencl_url }} dest=/usr/include copy=no
-
-- name: install nvidia driver
-  command: ./{{ nvidia_driver }} -s --no-kernel-module chdir=/usr/local
-
-
-
-- name: pip install and {{ haddock_app }}
-  pip: name={{ item }} state=present
-  with_items:
-    - "file:///usr/local/{{ haddock_app }}"
-
+    - "./configure -noX11 gnu"
+    - "make install"
+  environment:
+    PATH: $PATH:/usr/lib64/openmpi/bin/:{{ AMBERHOME }}/bin
+    LD_LIBRARY_PATH: {{ AMBERHOME }}/lib
