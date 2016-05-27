@@ -40,11 +40,14 @@
 - name: unarchive ambertools
   unarchive: src={{ ambertools_url }} dest=/usr/local copy=no
 
-- name: install configure ambertools
-  command: {{ item }} chdir=/usr/local/{{ AMBERHOME }}
-  with_items:
-    - "./configure -noX11 gnu"
-    - "make install"
+- name: configure ambertools single thread
+  command: ./configure -noX11 gnu chdir=/usr/local/{{ AMBERHOME }}
+  environment:
+    PATH: $PATH:/usr/lib64/openmpi/bin/:{{ AMBERHOME }}/bin
+    LD_LIBRARY_PATH: {{ AMBERHOME }}/lib
+
+- name: make install ambertools
+  command: make install chdir=/usr/local/{{ AMBERHOME }}
   environment:
     PATH: $PATH:/usr/lib64/openmpi/bin/:{{ AMBERHOME }}/bin
     LD_LIBRARY_PATH: {{ AMBERHOME }}/lib
