@@ -41,13 +41,15 @@
   unarchive: src={{ ambertools_url }} dest=/usr/local copy=no
 
 - name: configure ambertools single thread
-  command: ./configure -noX11 gnu chdir=/usr/local/{{ AMBERHOME }}
+  command: ./configure -noX11 gnu chdir=/usr/local/amber14
   environment:
-    PATH: $PATH:/usr/lib64/openmpi/bin/:{{ AMBERHOME }}/bin
-    LD_LIBRARY_PATH: {{ AMBERHOME }}/lib
+    AMBERHOME: /usr/local/amber14
+    PATH: "$PATH:/usr/lib64/openmpi/bin:/usr/local/amber14/bin"
+    LD_LIBRARY_PATH: /usr/local/amber14/lib
 
-- name: make install ambertools
-  command: make install chdir=/usr/local/{{ AMBERHOME }}
+- name: make install ambertools single thread
+  command: make install chdir=/usr/local/amber14
   environment:
-    PATH: $PATH:/usr/lib64/openmpi/bin/:{{ AMBERHOME }}/bin
-    LD_LIBRARY_PATH: {{ AMBERHOME }}/lib
+    AMBERHOME: /usr/local/amber14
+    PATH: "$PATH:/usr/lib64/openmpi/bin:/usr/local/amber14/bin"
+    LD_LIBRARY_PATH: /usr/local/amber14/lib
