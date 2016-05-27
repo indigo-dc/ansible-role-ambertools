@@ -38,16 +38,30 @@
     - virtualenv
 
 - name: unarchive ambertools
-  unarchive: src={{ ambertools_url }} dest=/usr/local copy=no
+  unarchive: src={{ ambertools_url }} dest=/usr/local owner=root group=root copy=no
 
 - name: configure ambertools single thread
-  command: ./configure -noX11 gnu chdir={{ AMBERHOME }}
+  command: ./configure --no-updates -noX11 gnu chdir={{ AMBERHOME }}
   env:
     AMBERHOME: {{ AMBERHOME }}
     PATH: "$PATH:/usr/lib64/openmpi/bin:{{ AMBERHOME }}/bin"
     LD_LIBRARY_PATH: "{{ AMBERHOME }}/lib"
 
 - name: make install ambertools single thread
+  command: make install chdir={{ AMBERHOME }}
+  env:
+    AMBERHOME: {{ AMBERHOME }}
+    PATH: "$PATH:/usr/lib64/openmpi/bin:{{ AMBERHOME }}/bin"
+    LD_LIBRARY_PATH: "{{ AMBERHOME }}/lib"
+
+- name: configure ambertools opemmpi
+  command: ./configure --no-updates -mpi -noX11 gnu chdir={{ AMBERHOME }}
+  env:
+    AMBERHOME: {{ AMBERHOME }}
+    PATH: "$PATH:/usr/lib64/openmpi/bin:{{ AMBERHOME }}/bin"
+    LD_LIBRARY_PATH: "{{ AMBERHOME }}/lib"
+
+- name: make install ambertools opemmpi
   command: make install chdir={{ AMBERHOME }}
   env:
     AMBERHOME: {{ AMBERHOME }}

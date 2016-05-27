@@ -1,4 +1,4 @@
-# docker build -t disvis .
+# docker build -t ambertools .
 
 FROM indigodatacloud/ubuntu-sshd:14.04
 MAINTAINER Mario David <mariojmdavid@gmail.com>
