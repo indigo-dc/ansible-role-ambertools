@@ -1,2 +1,4 @@
 ---
-# default variabbles goes here
+# tarball striped from test directory
+ambertools_url: http://www.lip.pt/~david/AmberTools15_indigo.tgz
+AMBERHOME: /usr/local/amber14
