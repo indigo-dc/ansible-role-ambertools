@@ -63,11 +63,16 @@ $ ansible-playbook /etc/ansible/roles/indigo-dc.ambertools/tests/ambertools.yml
 Run the Ambertools application
 ------------------------------
 
-The example runs disvis on the CPU with 2 threads:
+The example can be run as follows:
+```
+# export AMBERHOME=/usr/local/amber14
+# export PATH=$PATH:/usr/lib64/openmpi/bin/:$AMBERHOME/bin
+# export LD_LIBRARY_PATH=$AMBERHOME/lib
+# source $AMBERHOME/amber.sh
+# cd $AMBERHOME/AmberTools/benchmarks/nab
+# time ./bench_amber gcn4p1
+```
 
-```
-$ cd /home
-```
 
 License
 -------
