@@ -3,11 +3,12 @@ galaxy_info:
   description: Ambertools applications
   company: LIP and INDIGO-DataCloud
   license: Apache
-  min_ansible_version: 2.0
+  min_ansible_version: 2.1
   platforms:
   - name: Ubuntu
     versions:
     - trusty
   galaxy_tags:
   - ambertools
-dependencies: []
+dependencies:
+  - { role: indigo-dc.oneclient }
