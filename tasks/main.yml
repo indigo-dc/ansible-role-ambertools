@@ -38,32 +38,32 @@
     - virtualenv
 
 - name: unarchive ambertools
-  unarchive: src={{ ambertools_url }} dest=/usr/local owner=root group=root copy=no
+  unarchive: src={{ ambertools_url }} dest=/usr/local owner=root group=root copy=no creates={{ amber_home }}
 
 - name: configure ambertools single thread
-  command: ./configure --no-updates -noX11 gnu chdir={{ amber_home }}
-  env:
+  command: ./configure --no-updates -noX11 gnu chdir={{ amber_home }} creates={{ amber_home }}/config.h
+  environment:
     AMBERHOME: "{{ amber_home }}"
-    PATH: "$PATH:/usr/lib64/openmpi/bin:{{ amber_home }}/bin"
+    PATH: "{{ ansible_env.PATH }}:/usr/lib64/openmpi/bin:{{ amber_home }}/bin"
     LD_LIBRARY_PATH: "{{ amber_home }}/lib"
 
 - name: make install ambertools single thread
   command: make install chdir={{ amber_home }}
-  env:
+  environment:
     AMBERHOME: "{{ amber_home }}"
-    PATH: "$PATH:/usr/lib64/openmpi/bin:{{ amber_home }}/bin"
+    PATH: "{{ ansible_env.PATH }}:/usr/lib64/openmpi/bin:{{ amber_home }}/bin"
     LD_LIBRARY_PATH: "{{ amber_home }}/lib"
 
 - name: configure ambertools opemmpi
   command: ./configure --no-updates -mpi -noX11 gnu chdir={{ amber_home }}
-  env:
+  environment:
     AMBERHOME: "{{ amber_home }}"
-    PATH: "$PATH:/usr/lib64/openmpi/bin:{{ amber_home }}/bin"
+    PATH: "{{ ansible_env.PATH }}:/usr/lib64/openmpi/bin:{{ amber_home }}/bin"
     LD_LIBRARY_PATH: "{{ amber_home }}/lib"
 
 - name: make install ambertools opemmpi
   command: make install chdir={{ amber_home }}
-  env:
+  environment:
     AMBERHOME: "{{ amber_home }}"
-    PATH: "$PATH:/usr/lib64/openmpi/bin:{{ amber_home }}/bin"
+    PATH: "{{ ansible_env.PATH }}:/usr/lib64/openmpi/bin:{{ amber_home }}/bin"
     LD_LIBRARY_PATH: "{{ amber_home }}/lib"
