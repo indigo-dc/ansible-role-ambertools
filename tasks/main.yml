@@ -18,6 +18,7 @@
     - openmpi-bin
     - openmpi-common
     - patch
+    - pdb2pqr
     - python-matplotlib
     - python-dev
     - python-pip
