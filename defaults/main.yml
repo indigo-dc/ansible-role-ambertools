@@ -1,4 +1,4 @@
 ---
 # tarball striped from test directory
-ambertools_url: http://www.lip.pt/~david/AmberTools15_indigo.tgz
-amber_home: "/usr/local/amber14"
+ambertools_url: http://www.lip.pt/~david/AmberTools16_indigo-bin.tgz
+amber_home: "/usr/local/amber16"
