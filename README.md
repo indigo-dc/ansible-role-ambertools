@@ -3,8 +3,6 @@ Role and Dockerfile for Ambertools
 
 Roles and Dockerfiles to install the Ambertools:
 
-* https://github.com/haddocking/disvis.git
-
 Introduction
 ------------
 
@@ -65,7 +63,7 @@ Run the Ambertools application
 
 The example can be run as follows:
 ```
-# export AMBERHOME=/usr/local/amber14
+# export AMBERHOME=/usr/local/amber16
 # export PATH=$PATH:/usr/lib64/openmpi/bin/:$AMBERHOME/bin
 # export LD_LIBRARY_PATH=$AMBERHOME/lib
 # source $AMBERHOME/amber.sh

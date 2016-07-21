@@ -1,14 +1,14 @@
 # Ambertools
 
 ## Introduction
-The docker image is Ubuntu 14.04 LTS with AmberTools v15 compiled with openmpi and with no mpi.
+The docker image is Ubuntu 14.04 LTS with AmberTools v16 compiled with openmpi and with no mpi.
 The image is prepared to run as an application.
 
 It is built from the ansible-role-ambertools
 
-Indigo-DataCloud has produced a tarball of AmberTools15 without the test directories
+Indigo-DataCloud has produced a tarball of AmberTools16 without the test directories
 in order to decrease the size of the image, it is otherwise the same as the official
-release: http://www.lip.pt/~david/AmberTools15_indigo.tgz
+release: http://www.lip.pt/~david/AmberTools16_indigo-bin.tgz
 
 ## Build the docker image
 

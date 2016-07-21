@@ -2,7 +2,7 @@
 
 FROM indigodatacloud/ubuntu-sshd:14.04
 MAINTAINER Mario David <mariojmdavid@gmail.com>
-LABEL description="Container image to run AmberTools v15"
+LABEL description="Container image to run AmberTools v16"
 
 ENV AMBERHOME /usr/local/amber14
 ENV PATH $PATH:/usr/lib64/openmpi/bin/:$AMBERHOME/bin
