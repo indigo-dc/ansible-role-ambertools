@@ -17,7 +17,7 @@
     - libatlas-cpp-0.6-1
     - libatlas3-base
     - liblapack-pic
-    - libopenmpi
+    - libopenmpi1.6
     - openmpi-bin
     - openmpi-common
     - patch
