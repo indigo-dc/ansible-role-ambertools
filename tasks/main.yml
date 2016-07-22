@@ -10,10 +10,13 @@
     - gfortran
     - gcc
     - git
-    - libbz2
+    - libbz2-1.0
     - libfreetype6
-    - liblapack
-    - libatlas
+    - liblapack3
+    - liblapacke
+    - libatlas-cpp-0.6-1
+    - libatlas3-base
+    - liblapack-pic
     - libopenmpi
     - openmpi-bin
     - openmpi-common
