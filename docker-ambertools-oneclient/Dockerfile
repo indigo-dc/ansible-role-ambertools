@@ -7,7 +7,7 @@ LABEL description="Container image to run AmberTools v16"
 RUN locale-gen en_US.UTF-8
 RUN apt-get update -y
 RUN apt-get install software-properties-common -y
-RUN apt-add-repository ppa:ansible/ansible
+RUN apt-add-repository ppa:ansible/ansible -y
 RUN apt-get update && apt-get install -y \
     ansible
 
