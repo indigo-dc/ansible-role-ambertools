@@ -11,4 +11,4 @@ RUN ansible-galaxy install indigo-dc.ambertools,master && \
     ansible-playbook /etc/ansible/roles/indigo-dc.ambertools/tests/ambertools.yml
 
 EXPOSE 22
-CMD    ["/usr/sbin/sshd", "-D"]
+CMD /etc/init.d/vmcontext start; /usr/sbin/sshd -D
