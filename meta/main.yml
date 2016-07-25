@@ -10,5 +10,4 @@ galaxy_info:
     - trusty
   galaxy_tags:
   - ambertools
-dependencies:
-  - { role: indigo-dc.oneclient }
+dependencies: []
