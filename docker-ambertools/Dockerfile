@@ -1,6 +1,6 @@
 # docker build -t ambertools .
 
-FROM indigodatacloud/ubuntu-sshd:14.04
+FROM indigodatacloud/ubuntu-sshd:14.04-devel
 MAINTAINER Mario David <mariojmdavid@gmail.com>
 LABEL description="Container image to run AmberTools v16"
 
