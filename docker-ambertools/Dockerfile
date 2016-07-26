@@ -7,7 +7,7 @@ LABEL description="Container image to run AmberTools v16"
 ENV AMBERHOME /usr/local/amber16
 ENV PATH $PATH:/usr/lib64/openmpi/bin/:$AMBERHOME/bin
 ENV LD_LIBRARY_PATH $AMBERHOME/lib
-RUN ansible-galaxy install indigo-dc.ambertools,master && \
+RUN ansible-galaxy install indigo-dc.ambertools && \
     ansible-playbook /etc/ansible/roles/indigo-dc.ambertools/tests/ambertools.yml
 
 EXPOSE 22
