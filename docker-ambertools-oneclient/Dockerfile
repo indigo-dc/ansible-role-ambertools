@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 ENV AMBERHOME /usr/local/amber16
 ENV PATH $PATH:/usr/lib64/openmpi/bin/:$AMBERHOME/bin
 ENV LD_LIBRARY_PATH $AMBERHOME/lib
-RUN ansible-galaxy install indigo-dc.oneclient indigo-dc.ambertools,master && \
+RUN ansible-galaxy install indigo-dc.oneclient indigo-dc.ambertools && \
     ansible-playbook \
         -i /etc/ansible/roles/indigo-dc.ambertools/tests/inventory \
         /etc/ansible/roles/indigo-dc.oneclient/tests/test.yml && \
