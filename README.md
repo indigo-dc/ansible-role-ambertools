@@ -1,7 +1,10 @@
+[![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![Build Status](https://travis-ci.org/indigo-dc/ansible-role-ambertools.svg?branch=devel)](https://travis-ci.org/indigo-dc/ansible-role-ambertools)
+
 Role and Dockerfile for Ambertools
 ==================================
 
-Roles and Dockerfiles to install the Ambertools:
+Roles and Dockerfiles to install the Ambertools v16
 
 Introduction
 ------------
@@ -23,7 +26,8 @@ Role Variables
 The variables that can be passed to this role and a brief description
 about them are as follows.
 
-1. role variable..
+1. ambertools_url: Ambertools tarball URL
+2. amber_home: Ambertools installation directory
 
 Dependencies
 ------------
@@ -70,8 +74,6 @@ The example can be run as follows:
 # cd $AMBERHOME/AmberTools/benchmarks/nab
 # time ./bench_amber gcn4p1
 ```
-
-
 License
 -------
 
@@ -80,8 +82,11 @@ Apache v2
 Author Information
 ------------------
 
-Mario David: mariojmdavid@gmail.com
-LIP and Indigo-DataCloud project
+Mario David: <mariojmdavid@gmail.com>
+
+LIP Lisbon: http://www.lip.pt
+
+Indigo DataCloud: https://www.indigo-datacloud.eu/
 
 Acknowledgments
 ---------------
