@@ -1,4 +1,4 @@
-# docker build -t ambertools .
+# docker build --rm -t ambertools .
 
 FROM indigodatacloud/ubuntu-sshd:14.04-devel
 MAINTAINER Mario David <mariojmdavid@gmail.com>
