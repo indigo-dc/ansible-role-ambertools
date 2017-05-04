@@ -1,4 +1,4 @@
 ---
 - hosts: localhost
   roles:
-    - { role: indigo-dc.ambertools }
+    - { role: ansible-role-ambertools }
