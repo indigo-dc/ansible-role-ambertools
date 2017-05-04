@@ -3,8 +3,9 @@
 # Ambertools
 
 ## Introduction
-The docker image is Ubuntu 14.04 LTS with AmberTools v16 compiled with openmpi and with no mpi.
-The image is prepared to run as an application.
+The docker image is Ubuntu 16.04 LTS with AmberTools v17 compiled with openmpi.
+The image is prepared to run as an application. The installation directory is
+/usr/local/amber16
 
 It is built from the ansible-role-ambertools
 
