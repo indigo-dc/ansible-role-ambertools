@@ -9,4 +9,4 @@ ENV LD_LIBRARY_PATH $AMBERHOME/lib
 RUN ansible-galaxy install indigo-dc.oneclient &&\
     ansible-galaxy install git+https://github.com/indigo-dc/ansible-role-ambertools.git && \
     ansible-playbook /etc/ansible/roles/indigo-dc.oneclient/tests/test.yml && \
-    ansible-playbook /etc/ansible/roles/indigo-dc.ambertools/tests/ambertools.yml
+    ansible-playbook /etc/ansible/roles/ansible-role-ambertools/tests/ambertools.yml
