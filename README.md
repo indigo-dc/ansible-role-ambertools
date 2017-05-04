@@ -1,5 +1,5 @@
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
-[![Build Status](https://travis-ci.org/indigo-dc/ansible-role-ambertools.svg?branch=devel)](https://travis-ci.org/indigo-dc/ansible-role-ambertools)
+[![Build Status](https://travis-ci.org/indigo-dc/ansible-role-ambertools.svg?branch=master)](https://travis-ci.org/indigo-dc/ansible-role-ambertools)
 
 Role and Dockerfile for Ambertools
 ==================================
@@ -68,7 +68,7 @@ Run the Ambertools application
 The example can be run as follows:
 ```
 # export AMBERHOME=/usr/local/amber16
-# export PATH=$PATH:/usr/lib64/openmpi/bin/:$AMBERHOME/bin
+# export PATH=$PATH:$AMBERHOME/bin
 # export LD_LIBRARY_PATH=$AMBERHOME/lib
 # source $AMBERHOME/amber.sh
 # cd $AMBERHOME/AmberTools/benchmarks/nab

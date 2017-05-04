@@ -11,13 +11,18 @@
     - gcc
     - git
     - libbz2-1.0
+    - libbz2-dev
+    - libfftw3-bin
+    - libfftw3-dev
+    - libfftw3-3
     - libfreetype6
     - liblapack3
     - liblapacke
-    - libatlas-cpp-0.6-1
+    - libatlas-cpp-0.6-2
     - libatlas3-base
     - liblapack-pic
-    - libopenmpi1.6
+    - libopenmpi1.10
+    - libopenmpi-dev
     - openmpi-bin
     - openmpi-common
     - patch
@@ -30,6 +35,8 @@
     - tar
     - time
     - wget
+    - zlib1g-dev
+    - zlibc
 
 - name: pip install python modules
   pip: name={{ item }} state=latest

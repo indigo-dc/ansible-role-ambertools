@@ -3,7 +3,7 @@
 # Ambertools
 
 ## Introduction
-The docker image is Ubuntu 14.04 LTS with AmberTools v16 compiled with
+The docker image is Ubuntu 16.04 LTS with AmberTools v17 compiled with
 openmpi and with no mpi. The image is prepared to run as an application.
 
 It is built from the ansible-role-ambertools
