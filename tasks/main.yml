@@ -48,8 +48,5 @@
     - scipy
     - virtualenv
 
-- name: unarchive ambertools nompi
-  unarchive: src={{ ambertools_nompi_url }} dest=/usr/local owner=root group=root copy=no creates={{ amber_home }}
-
-- name: unarchive ambertools mpi
-  unarchive: src={{ ambertools_mpi_url }} dest=/usr/local owner=root group=root copy=no
+- name: unarchive ambertools
+  unarchive: src={{ ambertools_url }} dest=/usr/local owner=root group=root copy=no creates={{ amber_home }}
