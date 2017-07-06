@@ -7,7 +7,7 @@ ENV AMBERHOME /usr/local/amber16
 ENV PATH $PATH:AMBERHOME/bin
 ENV LD_LIBRARY_PATH $AMBERHOME/lib
 RUN apt-get update && apt-get -y install openjdk-8-jdk maven
-RUN ansible-galaxy install indigo-dc.oneclient &&\
+RUN ansible-galaxy install git+https://github.com/indigo-dc/ansible-role-oneclient.git &&\
     ansible-galaxy install git+https://github.com/indigo-dc/ansible-role-ambertools.git && \
-    ansible-playbook /etc/ansible/roles/indigo-dc.oneclient/tests/test.yml && \
+    ansible-playbook /etc/ansible/roles/indigo-dc.oneclient/tests/oneclient.yml && \
     ansible-playbook /etc/ansible/roles/ansible-role-ambertools/tests/ambertools.yml
