@@ -1,4 +1,4 @@
 ---
 # tarball striped from test directory
-ambertools_url: http://www.lip.pt/~david/ambertools/amber17-bin-ubuntu16.04.tgz
+ambertools_url: http://www.lip.pt/people/david/ambertools/amber17-bin-ubuntu16.04.tgz
 amber_home: "/usr/local/amber16"
